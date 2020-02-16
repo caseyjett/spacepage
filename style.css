@@ -1,0 +1,146 @@
+/* ELEMENTS */
+body {
+    margin: 0; 
+    padding: 0; 
+
+}
+
+p {
+    display: none; 
+    padding: 10px 20px; 
+    text-align: justify; 
+    color: white; 
+    line-height: 1.25em; 
+    font-family: sans-serif; 
+    position: relative; 
+}
+
+footer {
+    background-color: #33FF66; 
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 4%;
+}
+
+/* CLASSES */
+
+.stars, 
+.twinkling {
+    position: absolute; 
+    width: 100%; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    height: 100%; 
+    display: block; 
+}
+
+.stars {
+    background: black url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat; 
+    z-index: 0;   
+}
+
+.twinkling {
+    background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat; 
+    z-index: 1; 
+
+    animation: move-twink-back 200s linear infinite; 
+}
+
+.moon {
+    background: radial-gradient(#D5D8DC, transparent),
+             #D5D8DC url('moontexture.png') center;  
+    box-shadow: 0 0 100px 2px #D5D8DC; 
+    float: right; 
+    width: 100px; 
+    height: 100px; 
+    margin: 80px 10%; 
+    border-radius: 50%; 
+    transition: transform .4s ease-in-out; 
+}
+
+.rocket-parent {
+    position: fixed; 
+    bottom: 30px; 
+    left: 70px; 
+    height: 50%;     
+    width: 18%;
+}
+
+.rocket {
+    position: fixed; 
+    bottom: 0px; 
+    left: 70px; 
+    height: 50%;     
+    background-color: pink; 
+    width: 15%;  
+}
+
+.card {
+    background:black; 
+    opacity: 0.5; 
+    width: 50%; 
+    position: fixed;
+    right: 10%; 
+
+}
+
+.footer-top {
+    background-color: #33FF66; 
+    position: fixed; 
+    bottom: 0;  
+    left: 0;
+    border-radius: 70%; 
+    width: 100%; 
+    height: 8%;  
+}
+
+/* PSEUDO CLASSES */
+.rocket-parent:hover > .rocket {
+    animation: lift-off 4s;
+   
+}
+
+.moon:hover {
+    transform: scale(1.5); 
+}
+
+/* KEYFRAME ANIMATION */
+@keyframes lift-off {
+    0% {
+        bottom: 30px; 
+    }
+    50% {
+        bottom: 400px; 
+    }
+    100% {
+        bottom: 30px; 
+    }
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 600px) {
+    p {
+        display: block; 
+    }
+
+    .card {
+        bottom: 8%; 
+    }
+}
+
+@media (min-width: 768px) {
+    .card {
+        bottom: 20%; 
+    }
+}
+
